@@ -1,0 +1,53 @@
+/* Shimmer effect for flag, title, and paragraphs */
+.shimmer .flag, 
+.shimmer .title, 
+.country-details.shimmer p {
+  background: linear-gradient(90deg, var(--elements-color) 25%, #e9ecef 50%, var(--elements-color) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Last paragraph with adjusted width */
+.country-details.shimmer p:last-child {
+  width: 50%;
+}
+
+/* Shimmer keyframes */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Existing styles */
+.shimmer .flag {
+  width: 40%;
+  height: 240px;
+  border-radius: 4px;
+}
+
+.shimmer .title {
+  height: 36px;
+  border-radius: 4px;
+}
+
+.country-details.shimmer p {
+  height: 22px;
+  border-radius: 2px;
+}
+
+.details-text-container {
+  flex-grow: 1;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 940px) {
+  .shimmer .flag, 
+  .details-text-container {
+    width: 100%;
+    max-width: 400px;
+  }
+}
